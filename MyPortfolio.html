@@ -13,36 +13,52 @@
 
     <!-- Custom css-->
     <link rel="stylesheet" href="MyPortfolio.css">
+
+    <!-- Optional: HTML2PDF library for advanced PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo">Portfolio</a>
-        
-        <i class="bx bx-menu" id="menu-icon"></i>
+     
+        <div class="header-actions">
+            <button class="pdf-download-btn pdf-hide" onclick="downloadPortfolioAsPDF()" title="Download Portfolio as PDF">
+                <i class="bx bx-download"></i>
+                <span>Download PDF</span>
+            </button>
+            <i class="bx bx-menu" id="menu-icon"></i>
+        </div>
+
         <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About </a>
-            <a href="#services">Services</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contacts</a>
+            <a href="#home" class="active" data-en="Home" data-fr="Accueil">Home</a>
+            <a href="#about" data-en="About" data-fr="À propos">About</a>
+            <a href="#skills" data-en="Skills" data-fr="Compétences">Skills</a>
+            <a href="#projects" data-en="Projects" data-fr="Projets">Projects</a>
+            <a href="#contact" data-en="Contact" data-fr="Contact">Contact</a>
+            <div class="language-toggle">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <span class="lang-separator">|</span>
+                <button class="lang-btn" data-lang="fr">FR</button>
+            </div>
         </nav>
     </header>
     <!-- Home section design-->
-    <section class="home" id="home"> 
+    <section class="home" id="home">
         <div class="home-content">
-            <h3>Hello Every one</h3>
+            <h3 data-en="Hello, I'm" data-fr="Bonjour, je suis">Hello, I'm</h3>
             <h1>Tcheumani Sinak Justo</h1>
-            <h3>And I am a <Span>FrontEnd Developer</Span></h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, maiores explicabo? Qui at earum itaque 
-             asperiores sapiente id sint laudantium, 
-                expedita impedit eveniet.</p>
+            <h3>Web & Mobile <span data-en="Developer" data-fr="Développeur">Developer</span></h3>
+            <p data-en="I'm a passionate web and mobile developer skilled in React, Node.js, Laravel, Flutter, and Django. I enjoy building responsive, user-friendly applications that solve real-world problems. With experience in both frontend and backend development, I create full-stack solutions using modern technologies and best practices."
+               data-fr="Je suis un développeur web et mobile passionné, compétent en React, Node.js, Laravel, Flutter et Django. J'aime créer des applications réactives et conviviales qui résolvent des problèmes du monde réel. Avec une expérience en développement frontend et backend, je crée des solutions full-stack en utilisant des technologies modernes et les meilleures pratiques.">I'm a passionate web and mobile developer skilled in React, Node.js, Laravel, Flutter, and Django.
+               I enjoy building responsive, user-friendly applications that solve real-world problems.
+               With experience in both frontend and backend development, I create full-stack solutions
+               using modern technologies and best practices.</p>
                 <div class="social-media">
-                    <a href="#"><i class="bx bxl-facebook"></i></a>
-                    <a href="#"><i class="bx bxl-twitter"></i></a>
-                    <a href="#"><i class="bx bxl-instagram-alt"></i></a>
-                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://github.com/tcheumani-sinak-justo" target="_blank"><i class="bx bxl-github"></i></a>
+                    <a href="https://linkedin.com/in/tcheumani-sinak-justo" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                    <a href="mailto:tcheumani.sinak@gmail.com"><i class="bx bx-envelope"></i></a>
+                    <a href="tel:+237677777777"><i class="bx bx-phone"></i></a>
                 </div>
-                <a href="" class="btn">Download CV</a>
+                <a href="./CV-EN-US-TCHEUMANI-SINAK-JUSTO-SOFTWARE-ENGINEERING-17321308562024-12-08(1).pdf" class="btn" download="Tcheumani_Sinak_Justo_CV.pdf">Download CV</a>
         </div>
         <div class="home-img">
             <img src="./imgs/f1.jpg" width="350px" alt="">
@@ -55,123 +71,271 @@
            <img src="./imgs/girl.jpg" alt=""> 
         </div>
         <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>Frontend Developer</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Dolores eum magnam a repellendus sunt quae fuga officiis maiores 
-                corporis aliquid earum, nulla rerum vero minus, possimus omnis, 
-                assumenda expedita voluptatem?</p>
-                <a href="#" class="btn">Read More</a>
+            <h2 class="heading" data-en="About Me" data-fr="À propos de moi">About <span>Me</span></h2>
+            <h3 data-en="Web & Mobile Developer" data-fr="Développeur Web & Mobile">Web & Mobile Developer</h3>
+            <p data-en="I'm a passionate web and mobile developer skilled in React, Node.js, Laravel, Flutter, and Django. I enjoy building responsive, user-friendly applications that solve real-world problems."
+               data-fr="Je suis un développeur web et mobile passionné, compétent en React, Node.js, Laravel, Flutter et Django. J'aime créer des applications réactives et conviviales qui résolvent des problèmes du monde réel.">I'm a passionate web and mobile developer skilled in React, Node.js, Laravel, Flutter, and Django.
+               I enjoy building responsive, user-friendly applications that solve real-world problems.</p>
+
+            <p data-en="With a HND diploma and undergoing a Bachelor degree in Software Engineering and hands-on experience in full-stack development, I specialize in creating modern web applications, mobile apps, and blockchain solutions. My tech stack includes JavaScript, PHP, Dart, and various frameworks that enable me to deliver comprehensive digital solutions."
+               data-fr="Avec un diplôme HND et en cours d'obtention d'un Bachelor en Génie Logiciel et une expérience pratique en développement full-stack, je me spécialise dans la création d'applications web modernes, d'applications mobiles et de solutions blockchain. Ma pile technologique comprend JavaScript, PHP, Dart et divers frameworks qui me permettent de fournir des solutions numériques complètes.">With a HND diploma and undergoing a Bachelor degree in Software Engineering and hands-on experience in full-stack development,
+               I specialize in creating modern web applications, mobile apps, and blockchain solutions.
+               My tech stack includes JavaScript, PHP, Dart, and various frameworks that enable me to
+               deliver comprehensive digital solutions.</p>
+
+            <p data-en="I'm always excited to take on new challenges and contribute to innovative projects that make a positive impact in people's lives."
+               data-fr="Je suis toujours enthousiaste à l'idée de relever de nouveaux défis et de contribuer à des projets innovants qui ont un impact positif sur la vie des gens.">I'm always excited to take on new challenges and contribute to innovative projects that
+               make a positive impact in people's lives.</p>
         </div>
      </section>
 
-     <!-- Services section design-->
-     <section class="services" id="services">
-        <h2 class="heading">Our <span>Services</span></h2>
-
-        <div class="services-container">
-            <div class="services-box">
-                <i class='bx bx-code-alt'></i>
-                <h3>Web Development</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, maiores 
-                    adipisci! Minima, modi ea? Accusantium, debitis natus porro neque ipsam iste ex architecto 
-                    repellendus facilis nemo fuga, praesentium laborum aliquid?</p>
-                    <a href="#" class="btn">Read More</a>
+     <!-- Technical Skills section design -->
+     <section class="skills" id="skills">
+        <h2 class="heading" data-en="Technical Skills" data-fr="Compétences Techniques">Technical <span>Skills</span></h2>
+        <div class="skills-container">
+            <div class="skills-category">
+                <h3 data-en="Languages" data-fr="Langages">Languages</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">Dart</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Solidity</span>
+                </div>
             </div>
 
-            <div class="services-box">
-                <i class='bx bxs-paint'></i>
-                <h3>Graphic Design</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, maiores 
-                    adipisci! Minima, modi ea? Accusantium, debitis natus porro neque ipsam iste ex architecto 
-                    repellendus facilis nemo fuga, praesentium laborum aliquid?</p>
-                    <a href="#" class="btn">Read More</a>
+            <div class="skills-category">
+                <h3 data-en="Frameworks" data-fr="Frameworks">Frameworks</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Laravel</span>
+                    <span class="skill-tag">Flutter</span>
+                    <span class="skill-tag">Django</span>
+                    <span class="skill-tag">React Native</span>
+                    <span class="skill-tag">Express.js</span>
+                </div>
             </div>
 
-            <div class="services-box">
-                <i class='bx bx-bar-chart-alt'></i>
-                <h3>Digital Marketting</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, maiores 
-                    adipisci! Minima, modi ea? Accusantium, debitis natus porro neque ipsam iste ex architecto 
-                    repellendus facilis nemo fuga, praesentium laborum aliquid?</p>
-                    <a href="#" class="btn">Read More</a>
+            <div class="skills-category">
+                <h3 data-en="Tools" data-fr="Outils">Tools</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Firebase</span>
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Web3</span>
+                    <span class="skill-tag">IPFS</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3 data-en="Databases" data-fr="Bases de données">Databases</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">SQLite</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3 data-en="Other" data-fr="Autres">Other</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">Agile</span>
+                    <span class="skill-tag">CI/CD</span>
+                    <span class="skill-tag">Blockchain</span>
+                    <span class="skill-tag">Ethereum</span>
+                </div>
             </div>
         </div>
      </section>
 
-     <!-- Portfolio section design -->
-     <section class="portfolio" id="portfolio">
-        <h2 class="heading">Latest <span>Project</span></h2>
+     <!-- Projects section design -->
+     <section class="portfolio" id="projects">
+        <h2 class="heading" data-en="My Projects" data-fr="Mes Projets">My <span>Projects</span></h2>
         <div class="portfolio-container">
             <div class="portfolio-box">
-                <img src="./imgs/Screenshot_1.png" alt="">
+                <img src="./imgs/Screenshot_1.png" alt="CamDID - Blockchain SSI System">
                 <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing el sed doloremque! Ducimus?</p>
-                        <a href="#" ><i class='bx bx-link-external'></i></a>
+                    <h4>📱 CamDID - Blockchain SSI System</h4>
+                    <p>A self-sovereign identity (SSI) system built with MERN stack, Web3, and Ethereum. Users can receive and manage verifiable credentials securely on the blockchain.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Express.js</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Web3</span>
+                        <span class="tech-tag">Ethereum</span>
+                        <span class="tech-tag">Solidity</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class='bx bxl-github'></i> GitHub</a>
+                        <a href="#" class="project-link"><i class='bx bx-link-external'></i> Live Demo</a>
+                    </div>
                 </div>
             </div>
 
             <div class="portfolio-box">
-                <img src="./imgs/Screenshot_3.png" alt="">
+                <img src="./imgs/Screenshot_2.png" alt="QR-Code Attendance System">
                 <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing el sed doloremque! Ducimus?</p>
-                        <a href="#" ><i class='bx bx-link-external'></i></a>
+                    <h4>📊 QR-Code Attendance Management</h4>
+                    <p>A comprehensive attendance management system using QR codes for quick check-ins. Built with Laravel for robust backend functionality and real-time reporting.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Laravel</span>
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Bootstrap</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class='bx bxl-github'></i> GitHub</a>
+                        <a href="#" class="project-link"><i class='bx bx-link-external'></i> Live Demo</a>
+                    </div>
                 </div>
             </div>
 
             <div class="portfolio-box">
-                <img src="./imgs/Screenshot_4.png" alt="">
+                <img src="./imgs/Screenshot_3.png" alt="LinguaLearn - Language Learning App">
                 <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing el sed doloremque! Ducimus?</p>
-                        <a href="#" ><i class='bx bx-link-external'></i></a>
+                    <h4>🌍 LinguaLearn - Language Learning App</h4>
+                    <p>An interactive language learning platform with gamified lessons, progress tracking, and community features. Built with MERN stack for seamless user experience.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Express.js</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Socket.io</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class='bx bxl-github'></i> GitHub</a>
+                        <a href="#" class="project-link"><i class='bx bx-link-external'></i> Live Demo</a>
+                    </div>
                 </div>
             </div>
 
             <div class="portfolio-box">
-                <img src="./imgs/Screenshot_5.png" alt="">
+                <img src="./imgs/Screenshot_4.png" alt="App Management Mobile App">
                 <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing sed doloremque! Ducimus?</p>
-                        <a href="#" ><i class='bx bx-link-external'></i></a>
+                    <h4>📱 App Management Mobile App</h4>
+                    <p>A cross-platform mobile application for managing and monitoring various applications. Built with React Native for optimal performance on both iOS and Android.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Redux</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class='bx bxl-github'></i> GitHub</a>
+                        <a href="#" class="project-link"><i class='bx bx-link-external'></i> App Store</a>
+                    </div>
                 </div>
             </div>
 
             <div class="portfolio-box">
-                <img src="./imgs/Screenshot_2.png" alt="">
+                <img src="./imgs/Screenshot_5.png" alt="Travel Agency Mail Management">
                 <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing el sed doloremque! Ducimus?</p>
-                        <a href="#" ><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="./imgs/Screenshot_6.png" alt="">
-                <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing el sed doloremque! Ducimus?</p>
-                        <a href="#" ><i class='bx bx-link-external'></i></a>
+                    <h4>✈️ Travel Agency Mail Management</h4>
+                    <p>A comprehensive email management system for travel agencies with automated booking confirmations, customer communications, and reporting features.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Celery</span>
+                        <span class="tech-tag">Redis</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class='bx bxl-github'></i> GitHub</a>
+                        <a href="#" class="project-link"><i class='bx bx-link-external'></i> Live Demo</a>
+                    </div>
                 </div>
             </div>
         </div>
      </section>
      <!-- contact section design -->
-     
-     <section class="contact" id="contact">
-        <h2 class="heading">Contact <Span>Me!</Span></h2>
 
-        <form action="#">
+     <section class="contact" id="contact">
+        <h2 class="heading" data-en="Contact Information" data-fr="Informations de Contact">Contact <span>Information</span></h2>
+
+        <div class="contact-info">
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class='bx bx-envelope'></i>
+                    <div class="contact-text">
+                        <h4 data-en="Email" data-fr="Email">Email</h4>
+                        <p><a href="mailto:tcheumanisinakjusto@gmail.com">tcheumanisinakjusto@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class='bx bxl-github'></i>
+                    <div class="contact-text">
+                        <h4>GitHub</h4>
+                        <p><a href="https://github.com/JustoSinak" target="_blank">github.com/JustoSinak</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class='bx bxl-linkedin'></i>
+                    <div class="contact-text">
+                        <h4>LinkedIn</h4>
+                        <p><a href="https://linkedin.com/in/JustoSinak" target="_blank">linkedin.com/in/justo-sinak</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class='bx bx-phone'></i>
+                    <div class="contact-text">
+                        <h4 data-en="Phone" data-fr="Téléphone">Phone</h4>
+                        <p><a href="tel:+237680312765">+237 680312765</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class='bx bx-map'></i>
+                    <div class="contact-text">
+                        <h4 data-en="Location" data-fr="Localisation">Location</h4>
+                        <p>Douala, Cameroon</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class='bx bx-download'></i>
+                    <div class="contact-text">
+                        <h4 data-en="Downloads" data-fr="Téléchargements">Downloads</h4>
+                        <p>
+                            <a href="./CV-EN-US-TCHEUMANI-SINAK-JUSTO-SOFTWARE-ENGINEERING-17321308562024-12-08(1).pdf" download="Sinak_Justo_CV.pdf" data-en="Download CV" data-fr="Télécharger CV">Download CV</a> |
+                            <a href="#" onclick="downloadPortfolioAsPDF(); return false;" class="pdf-hide" data-en="Download Portfolio PDF" data-fr="Télécharger Portfolio PDF">Download Portfolio PDF</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pdf-download-section pdf-hide">
+                <button class="pdf-download-main-btn" onclick="downloadPortfolioAsPDF()">
+                    <i class="bx bx-download"></i>
+                    <span>Download Complete Portfolio as PDF</span>
+                </button>
+                <p class="pdf-note">Get a PDF version of this portfolio for offline viewing or printing</p>
+                <div class="pdf-instructions">
+                    <h4>PDF Download Instructions:</h4>
+                    <ul>
+                        <li>Click the download button above to generate a PDF</li>
+                        <li>The PDF will include all sections: About, Skills, Projects, and Contact info</li>
+                        <li>Perfect for job applications and offline viewing</li>
+                        <li>If automatic download fails, use your browser's Print → Save as PDF option</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <form action="#" class="contact-form">
+            <h3>Send me a message</h3>
             <div class="input-box">
-                <input type="number" placeholder="MObile Number">
-                <input type="email" placeholder="Email Address">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
             </div>
             <div class="input-box">
-                <input type="number" placeholder="MObile Number">
-                <input type="email" placeholder="Email Address">
+                <input type="tel" placeholder="Phone Number">
+                <input type="text" placeholder="Subject" required>
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
             <input type="submit" value="Send Message" class="btn">
         </form>
     </section>
@@ -179,7 +343,7 @@
     <!-- Footer design-->
     <footer class="footer">
         <div class="footer-text">
-            <p>Copyright &copy; 2023 by Codehal | All Rights Reserver </p>
+            <p>Copyright &copy; 2024 by Tcheumani Sinak Justo | All Rights Reserved</p>
         </div>
         <div class="footer-iconTop">
             <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
